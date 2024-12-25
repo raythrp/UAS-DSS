@@ -129,7 +129,7 @@ def preprocess(text):
 
 @st.cache_data
 def load_and_prepare_data():
-    data = pd.read_csv("Emotion_classify_Data.csv")
+    data = pd.read_csv("./Emotion_classify_Data.csv")
     data['Preprocessed Comment'] = data['Comment'].apply(preprocess)
     data['Emotion Number'] = data['Emotion'].map({'joy': 0, 'fear': 1, 'anger': 2})
     return data
